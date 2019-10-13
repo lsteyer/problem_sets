@@ -192,7 +192,7 @@ rating_hyp_long_d = rating_hyp_long_d %>%
     Emotion = str_extract(Measurement, "Angry|Neutral|Excited|Exciting|Calm"),
     Emotion = ifelse(Emotion == "Excited", "Exciting", # this just gets rid of some annoying labeling choices
               ifelse(Emotion == "Calm", "Neutral", Emotion))
-    ) 
+    )
 ```
 
 # Groups, Summaries, and Results
@@ -240,7 +240,7 @@ rating_summary_d
 And a simple bar plot (don't worry too much about what exactly this code is doing):
 
 ```{r TamirFig1}
-ggplot(rating_summary_d, aes(x=ConfrontationalGame, y=MeanRating, fill=Emotion)) +
+ggplot(rating_summary_d, aes(x=IsRecall, y=MeanRating, fill=Emotion)) +
   geom_bar(position="dodge", stat="identity") + 
   scale_fill_brewer(palette="Set1")
 ```
